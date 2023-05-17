@@ -154,7 +154,7 @@ export default function Login() {
 
       localStorage.setItem("selectedUserId", selectedUserId);
 
-      let currentUser = await localStorage.getItem(`${selectedUserId}`);
+      let currentUser = await localStorage.getItem("selectedUserId");
       console.log(currentUser);
       setCurrentUser(currentUser);
     } catch (err) {
