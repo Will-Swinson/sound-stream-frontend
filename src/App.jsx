@@ -92,6 +92,11 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    let selectedUserId = localStorage.getItem("selectedUserId");
+    setCurrentUser(selectedUserId);
+  }, []);
+
   if (currentUser && code) {
     return <Dashboard code={code} />;
   } else {
