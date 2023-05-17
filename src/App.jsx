@@ -9,7 +9,7 @@ const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=6149eda588f34
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-
+  const [code, setCode] = useState(null);
   const handleSubmit = async (email, username, password) => {
     try {
       console.log(email, username, password);
@@ -38,7 +38,7 @@ function App() {
   };
 
   useEffect(() => {
-    const code = new URLSearchParams(window.location.search).get("code");
+    setCode(new URLSearchParams(window.location.search).get("code"));
     let selectedUserId = localStorage.getItem("selectedUserId");
     setCurrentUser(selectedUserId);
   }, []);
