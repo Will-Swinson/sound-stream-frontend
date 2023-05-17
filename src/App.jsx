@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     let selectedUserId = localStorage.getItem("selectedUserId");
     setCurrentUser(selectedUserId);
-  }, [code]);
+  }, [handleSubmit]);
 
   const handleSubmit = async (email, username, password) => {
     try {
