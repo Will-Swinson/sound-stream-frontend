@@ -131,7 +131,6 @@ export default function Login({ handleSubmit }) {
   const [password, setPassword] = useState("");
 
   const handleFormSubmit = async (event) => {
-    console.log(email, username, password);
     event.preventDefault();
     await handleSubmit(email, username, password);
   };

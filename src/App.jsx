@@ -80,7 +80,7 @@ function App() {
         }
       );
 
-      console.log(response.data);
+      // console.log(response.data);
       let selectedUserId = response.data.selectedUser.id;
 
       localStorage.setItem("selectedUserId", selectedUserId);
@@ -91,8 +91,6 @@ function App() {
       console.error(err);
     }
   };
-
-  console.log(currentUser, code);
 
   if (currentUser && code) {
     return <Dashboard code={code} />;
