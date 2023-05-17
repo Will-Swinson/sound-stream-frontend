@@ -136,7 +136,7 @@ export default function Login() {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      window.location.href = AUTH_URL;
+      // window.location.href = AUTH_URL;
 
       console.log(email, username, password);
       const newUser = { username, password, email };
