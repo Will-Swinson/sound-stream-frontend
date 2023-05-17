@@ -34,6 +34,7 @@ function App() {
       localStorage.setItem("selectedUserId", selectedUserId);
 
       setCurrentUser(selectedUserId);
+      console.log(currentUser);
     } catch (err) {
       console.error(err);
     }
@@ -42,7 +43,7 @@ function App() {
   useEffect(() => {
     let selectedUserId = localStorage.getItem("selectedUserId");
     setCurrentUser(selectedUserId);
-  }, [handleSubmit]);
+  }, []);
 
   if (currentUser && code) {
     return <Dashboard code={code} />;
