@@ -150,6 +150,8 @@ export default function Login() {
           },
         }
       );
+
+      console.log(response.data);
       let selectedUserId = await response.data.selectedUser.id;
 
       localStorage.setItem("selectedUserId", selectedUserId);
