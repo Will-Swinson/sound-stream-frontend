@@ -141,11 +141,15 @@ export default function Login() {
       console.log(email, username, password);
       const newUser = { username, password, email };
 
-      const response = await axios.post("/api/users", newUser, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await axios.post(
+        "https://soundstream-api.onrender.com/api/users",
+        newUser,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       let selectedUserId = await response.data.selectedUser.id;
 
       localStorage.setItem("selectedUserId", selectedUserId);
