@@ -18,12 +18,17 @@ export default function TrackSearchResult({
 
   async function handleAddSong() {
     const addingSong = selectedTrack(track);
-    const response = await axios.post("/api/playlist", addingSong, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `${currentUser}`,
-      },
-    });
+    console.log(addingSong);
+    const response = await axios.post(
+      "https://soundstream-api.onrender.com/api/playlist",
+      addingSong,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${currentUser}`,
+        },
+      }
+    );
   }
 
   return (
