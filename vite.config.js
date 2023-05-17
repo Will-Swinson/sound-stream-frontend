@@ -7,7 +7,7 @@ export default defineConfig({
   port: 3000,
   server: {
     proxy: {
-      "/api": `http://localhost:3001`,
+      "/api": `https://soundstream-api.onrender.com`,
     },
   },
 });
