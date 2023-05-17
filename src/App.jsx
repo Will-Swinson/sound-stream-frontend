@@ -108,14 +108,9 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const code = new URLSearchParams(window.location.search).get("code");
 
-  useEffect(() => {
-    let selectedUserId = localStorage.getItem("selectedUserId");
-    setCurrentUser(selectedUserId);
-  }, []);
-
   const handleSubmit = async (email, username, password) => {
     try {
-      window.location.href = AUTH_URL;
+      // window.location.href = AUTH_URL;
       console.log(email, username, password);
       const newUser = { username, password, email };
 
@@ -139,6 +134,10 @@ function App() {
       console.error(err);
     }
   };
+  useEffect(() => {
+    let selectedUserId = localStorage.getItem("selectedUserId");
+    setCurrentUser(selectedUserId);
+  }, []);
 
   if (currentUser && code) {
     return <Dashboard code={code} />;
