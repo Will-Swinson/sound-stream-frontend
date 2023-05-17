@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 import axios from "axios";
 
-// import Login from "./Login.jsx";
-
 import Dashboard from "./Dashboard";
 import Login from "./Login";
-// Get code from the URL
 
 const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=6149eda588f347a0856c12deaaff09a3&response_type=code&redirect_uri=https://soundstream-q4fk.onrender.com&scope=ugc-image-upload%20user-read-playback-state%20user-modify-playback-state%20user-read-currently-playing%20streaming%20playlist-read-private%20playlist-modify-private%20playlist-modify-public%20user-top-read%20user-read-recently-played%20user-library-modify%20user-library-read`;
 
@@ -14,12 +11,6 @@ const code = new URLSearchParams(window.location.search).get("code");
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  const code = new URLSearchParams(window.location.search).get("code");
-
-  useEffect(() => {
-    let selectedUserId = localStorage.getItem("selectedUserId");
-    setCurrentUser(selectedUserId);
-  }, [handleSubmit]);
 
   const handleSubmit = async (email, username, password) => {
     try {
@@ -47,6 +38,11 @@ function App() {
       console.error(err);
     }
   };
+
+  useEffect(() => {
+    let selectedUserId = localStorage.getItem("selectedUserId");
+    setCurrentUser(selectedUserId);
+  }, [handleSubmit]);
 
   if (currentUser && code) {
     return <Dashboard code={code} />;
