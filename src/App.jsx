@@ -14,7 +14,7 @@ function App() {
 
   const handleSubmit = async (email, username, password) => {
     try {
-      window.location.href = AUTH_URL;
+      // window.location.href = AUTH_URL;
       console.log(email, username, password);
       const newUser = { username, password, email };
 
