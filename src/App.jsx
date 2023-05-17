@@ -14,6 +14,7 @@ const code = new URLSearchParams(window.location.search).get("code");
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const code = new URLSearchParams(window.location.search).get("code");
 
   useEffect(() => {
     let selectedUserId = localStorage.getItem("selectedUserId");
@@ -47,7 +48,7 @@ function App() {
     }
   };
 
-  if (currentUser && code) {
+  if (currentUser || code) {
     return <Dashboard code={code} />;
   } else {
     return <Login handleSubmit={handleSubmit} />;
