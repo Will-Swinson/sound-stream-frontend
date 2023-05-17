@@ -39,10 +39,10 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    let selectedUserId = localStorage.getItem("selectedUserId");
-    setCurrentUser(selectedUserId);
-  }, []);
+  // useEffect(() => {
+  //   let selectedUserId = localStorage.getItem("selectedUserId");
+  //   setCurrentUser(selectedUserId);
+  // }, []);
   console.log(currentUser);
   if (currentUser && code) {
     return <Dashboard code={code} />;
