@@ -42,12 +42,12 @@ export default function Header({ code }) {
                   <div className="flex flex-shrink-0 items-center">
                     <img
                       className="block h-12 w-auto lg:hidden mr-2"
-                      src="..dist/musicIcon.png"
+                      src="./assets/musicIcon.png"
                       alt="Your Company"
                     />
                     <img
                       className="hidden h-12 w-auto lg:block"
-                      src="..dist/musicIcon.png"
+                      src="./assets/musicIcon.png"
                       alt="Your Company"
                     />
                   </div>
