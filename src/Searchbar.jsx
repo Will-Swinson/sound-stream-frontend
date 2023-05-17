@@ -28,11 +28,14 @@ export default function Searchbar({ code }) {
 
     console.log(currentUser);
     // Make the GET request
-    const response = await axios.get("/api/playlist/all", {
-      params: {
-        userId: currentUser,
-      },
-    });
+    const response = await axios.get(
+      "https://soundstream-api.onrender.com/api/playlist/all",
+      {
+        params: {
+          userId: currentUser,
+        },
+      }
+    );
 
     const trackURI = response.data.playlist.map((track) => track.song_id);
 
