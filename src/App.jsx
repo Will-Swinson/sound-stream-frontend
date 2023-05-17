@@ -92,7 +92,7 @@ function App() {
     }
   };
 
-  console.log(currentUser);
+  console.log(currentUser, code);
 
   if (currentUser && code) {
     return <Dashboard code={code} />;
