@@ -127,44 +127,43 @@ const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=6149eda588f34
 //   );
 // }
 
-export default function Login() {
+export default function Login({ handleSubmit }) {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [currentUser, setCurrentUser] = useState(null);
 
-  const handleSubmit = async (event) => {
-    try {
-      event.preventDefault();
-      // window.location.href = AUTH_URL;
+  // const handleSubmit = async (event) => {
+  //   try {
+  //     event.preventDefault();
+  //     // window.location.href = AUTH_URL;
 
-      console.log(email, username, password);
-      const newUser = { username, password, email };
+  //     console.log(email, username, password);
+  //     const newUser = { username, password, email };
 
-      const response = await axios.post(
-        "https://soundstream-api.onrender.com/api/users",
-        newUser,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+  //     const response = await axios.post(
+  //       "https://soundstream-api.onrender.com/api/users",
+  //       newUser,
+  //       {
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //       }
+  //     );
 
-      console.log(response.data);
-      let selectedUserId = await response.data.selectedUser.id;
+  //     console.log(response.data);
+  //     let selectedUserId = await response.data.selectedUser.id;
 
-      localStorage.setItem("selectedUserId", selectedUserId);
+  //     localStorage.setItem("selectedUserId", selectedUserId);
 
-      let currentUser = await localStorage.getItem("selectedUserId");
-      console.log(currentUser);
-      setCurrentUser(currentUser);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  //     let currentUser = await localStorage.getItem("selectedUserId");
+  //     console.log(currentUser);
+  //     setCurrentUser(currentUser);
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
-  console.log(currentUser);
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
