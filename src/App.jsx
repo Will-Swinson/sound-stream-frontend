@@ -62,7 +62,8 @@ const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=6149eda588f34
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
-  const [code, setCode] = useState(null);
+
+  const code = new URLSearchParams(window.location.search).get("code");
 
   const handleSubmit = async (email, username, password) => {
     try {
@@ -85,19 +86,11 @@ function App() {
       localStorage.setItem("selectedUserId", selectedUserId);
 
       setCurrentUser(selectedUserId);
+      window.location.href = AUTH_URL;
     } catch (err) {
       console.error(err);
     }
   };
-
-  useEffect(() => {
-    setCode(new URLSearchParams(window.location.search).get("code"));
-    let selectedUserId = localStorage.getItem("selectedUserId");
-    setCurrentUser(selectedUserId);
-    if (currentUser && code) {
-      window.location.href = AUTH_URL;
-    }
-  }, [currentUser, code]);
 
   console.log(currentUser);
 
