@@ -45,11 +45,11 @@ function App() {
   //   setCurrentUser(selectedUserId);
   // }, []);
   console.log(currentUser);
-  if (currentUser && code) {
-    return <Dashboard code={code} />;
-  } else {
-    return <Login handleSubmit={handleSubmit} />;
-  }
+  // if (currentUser && code) {
+  // return <Dashboard code={code} />;
+  // } else {
+  return <Login handleSubmit={handleSubmit} />;
+  // }
 }
 
 export default App;

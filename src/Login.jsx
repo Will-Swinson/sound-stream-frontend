@@ -128,10 +128,9 @@ import Searchbar from "./Searchbar";
 // }
 
 export default function Login({ handleSubmit }) {
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [currentUser, setCurrentUser] = useState(null);
+  // const [email, setEmail] = useState("");
+  // const [username, setUsername] = useState("");
+  // const [password, setPassword] = useState("");
 
   // const handleSubmit = async (event) => {
   //   try {
