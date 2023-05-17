@@ -48,7 +48,7 @@ function App() {
     }
   };
 
-  if (currentUser || code) {
+  if (currentUser && code) {
     return <Dashboard code={code} />;
   } else {
     return <Login handleSubmit={handleSubmit} />;
