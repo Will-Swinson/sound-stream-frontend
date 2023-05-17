@@ -35,7 +35,7 @@ export default function TrackSearchResult({
     <>
       <div className="bg-gray-600 w-44 h-44 mb-4 mt-2 p-0 ml-5 flex flex-row-reverse flex-col rounded-lg items-center cursor-pointer relative">
         <div onClick={handleAddSong} className="h-6 w-6 p-0 self-start">
-          <img className="m-0 p-0" src="..dist/plus.png" />
+          <img className="m-0 p-0" src="./dist/plus.png" />
         </div>
 
         <div className="flex mb-2" onClick={handlePlay}>
