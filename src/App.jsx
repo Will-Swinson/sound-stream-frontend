@@ -14,7 +14,7 @@ function App() {
 
   const handleSubmit = async (email, username, password) => {
     try {
-      // window.location.href = AUTH_URL;
+      window.location.href = AUTH_URL;
       console.log(email, username, password);
       const newUser = { username, password, email };
 
@@ -39,16 +39,16 @@ function App() {
     }
   };
 
-  // useEffect(() => {
-  //   let selectedUserId = localStorage.getItem("selectedUserId");
-  //   setCurrentUser(selectedUserId);
-  // }, []);
-  // console.log(currentUser);
-  // if (currentUser && code) {
-  // return <Dashboard code={code} />;
-  // } else {
-  return <Login handleSubmit={handleSubmit} />;
-  // }
+  useEffect(() => {
+    let selectedUserId = localStorage.getItem("selectedUserId");
+    setCurrentUser(selectedUserId);
+  }, []);
+  console.log(currentUser);
+  if (currentUser && code) {
+    return <Dashboard code={code} />;
+  } else {
+    return <Login handleSubmit={handleSubmit} />;
+  }
 }
 
 export default App;
