@@ -18,6 +18,7 @@ export default function TrackSearchResult({
 
   async function handleAddSong() {
     const addingSong = selectedTrack(track);
+    console.log(addingSong, currentUser);
     const response = await axios.post(
       "https://soundstream-api.onrender.com/api/playlist",
       addingSong,
