@@ -130,6 +130,11 @@ export default function Login({ handleSubmit }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    await handleSubmit(email, username, password);
+  };
+
   // const handleSubmit = async (event) => {
   //   try {
   //     event.preventDefault();
@@ -176,10 +181,7 @@ export default function Login({ handleSubmit }) {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form
-            className="space-y-6"
-            onSubmit={(e) => handleSubmit(e, email, username, password)}
-          >
+          <form className="space-y-6" onSubmit={handleFormSubmit}>
             <div>
               <label
                 htmlFor="email"
