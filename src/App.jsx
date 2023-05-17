@@ -7,8 +7,6 @@ import Login from "./Login";
 
 const AUTH_URL = `https://accounts.spotify.com/authorize?client_id=6149eda588f347a0856c12deaaff09a3&response_type=code&redirect_uri=https://soundstream-q4fk.onrender.com&scope=ugc-image-upload%20user-read-playback-state%20user-modify-playback-state%20user-read-currently-playing%20streaming%20playlist-read-private%20playlist-modify-private%20playlist-modify-public%20user-top-read%20user-read-recently-played%20user-library-modify%20user-library-read`;
 
-const code = new URLSearchParams(window.location.search).get("code");
-
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
@@ -39,10 +37,11 @@ function App() {
     }
   };
 
-  // useEffect(() => {
-  //   let selectedUserId = localStorage.getItem("selectedUserId");
-  //   setCurrentUser(selectedUserId);
-  // }, []);
+  useEffect(() => {
+    const code = new URLSearchParams(window.location.search).get("code");
+    let selectedUserId = localStorage.getItem("selectedUserId");
+    setCurrentUser(selectedUserId);
+  }, []);
   console.log(currentUser);
   if (currentUser && code) {
     return <Dashboard code={code} />;
