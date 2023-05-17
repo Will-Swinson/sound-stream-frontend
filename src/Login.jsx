@@ -178,7 +178,7 @@ export default function Login({ handleSubmit }) {
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form
             className="space-y-6"
-            onSubmit={handleSubmit(email, username, password)}
+            onSubmit={(e) => handleSubmit(e, email, username, password)}
           >
             <div>
               <label
