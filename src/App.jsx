@@ -142,13 +142,11 @@ function App() {
   //   setCurrentUser(selectedUserId);
   // }, []);
   useEffect(() => {
-    setCode(new URLSearchParams(window.location.search).get("code"));
+    const codeFromURL = new URLSearchParams(window.location.search).get("code");
+    setCode(codeFromURL);
     let selectedUserId = localStorage.getItem("selectedUserId");
     setCurrentUser(selectedUserId);
-    if (currentUser && code) {
-      window.location.href = AUTH_URL;
-    }
-  }, [currentUser, code]);
+  }, []);
   console.log(code);
   if (currentUser && code) {
     return <Dashboard code={code} />;
