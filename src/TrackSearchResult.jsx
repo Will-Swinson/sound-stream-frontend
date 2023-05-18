@@ -10,7 +10,7 @@ export default function TrackSearchResult({
 }) {
   let currentUser = window.localStorage.getItem("selectedUserId");
 
-  console.log(track);
+  console.log(currentUser);
 
   function handlePlay() {
     chooseTrack(track);
