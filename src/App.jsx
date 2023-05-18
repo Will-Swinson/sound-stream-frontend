@@ -140,7 +140,7 @@ function App() {
   //   let selectedUserId = localStorage.getItem("selectedUserId");
   //   setCurrentUser(selectedUserId);
   // }, []);
-
+  console.log(code);
   if (currentUser && code) {
     return <Dashboard code={code} />;
   } else {
