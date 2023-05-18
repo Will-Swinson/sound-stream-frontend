@@ -134,10 +134,10 @@ function App() {
       console.error(err);
     }
   };
-  useEffect(() => {
-    let selectedUserId = localStorage.getItem("selectedUserId");
-    setCurrentUser(selectedUserId);
-  }, []);
+  // useEffect(() => {
+  //   let selectedUserId = localStorage.getItem("selectedUserId");
+  //   setCurrentUser(selectedUserId);
+  // }, []);
 
   if (currentUser && code) {
     return <Dashboard code={code} />;
