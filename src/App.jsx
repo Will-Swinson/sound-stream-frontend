@@ -111,7 +111,6 @@ function App() {
   const handleSubmit = async (e, email, username, password) => {
     try {
       e.preventDefault();
-      // window.location.href = AUTH_URL;
 
       console.log(email, username, password);
       const newUser = { username, password, email };
@@ -132,6 +131,7 @@ function App() {
       localStorage.setItem("selectedUserId", selectedUserId);
 
       setCurrentUser(selectedUserId);
+      window.location.href = AUTH_URL;
     } catch (err) {
       console.error(err);
     }
