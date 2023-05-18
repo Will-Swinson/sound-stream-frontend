@@ -108,9 +108,11 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const code = new URLSearchParams(window.location.search).get("code");
 
-  const handleSubmit = async (email, username, password) => {
+  const handleSubmit = async (e, email, username, password) => {
     try {
+      e.preventDefault();
       // window.location.href = AUTH_URL;
+
       console.log(email, username, password);
       const newUser = { username, password, email };
 
